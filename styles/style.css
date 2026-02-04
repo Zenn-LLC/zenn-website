@@ -196,9 +196,10 @@ section > h2, section > .socials > h2 {
 }
 .about-item {
     flex: 1;
-    height: 80vh;
+    /* height: 80vh; */
     background-color: #eee;
     border-radius: 20px;
+    padding-bottom: 100px;
 }
 .about-item-1 {
     background-color: var(--pry-color);
@@ -334,6 +335,7 @@ footer.sitemap {
 .legal {
     padding: 20px 0;
     color: #555;
+    text-align: center;
 }
 .menu, .mobile-menu {
     display: none;
