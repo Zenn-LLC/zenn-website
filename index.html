@@ -873,15 +873,15 @@
         <p class="form-card-sub">We'll send you a direct invite when your spot is ready. No spam.</p>
 
         <div class="field">
-          <label class="field-label" for="f-moniker">Your Moniker</label>
-          <input class="input" type="text" id="f-moniker" placeholder="e.g. SharpShooter, LudoKing…" autocomplete="nickname" />
+          <label class="field-label" for="f-moniker">Your Username</label>
+          <input class="input" type="text" id="f-moniker" placeholder="e.g. Abdulazeez" autocomplete="nickname" />
         </div>
 
         <div class="field">
           <label class="field-label" for="f-phone">Phone Number</label>
           <div class="phone-wrap">
             <div class="phone-prefix">+234</div>
-            <input class="input" type="tel" id="f-phone" placeholder="080 0000 0000" maxlength="14" autocomplete="tel" />
+            <input class="input" type="tel" id="f-phone" placeholder="80 0000 0000" maxlength="10" autocomplete="tel" />
           </div>
         </div>
 
@@ -1161,23 +1161,30 @@
   });
 
   // Form submit
-  function handleSubmit() {
+  async function handleSubmit() {
     const phone = document.getElementById('f-phone').value.trim();
-    if (phone.replace(/\D/g,'').length < 7) {
+    if (phone.replace(/\D/g,'').length < 10) {
       const el = document.getElementById('f-phone');
       el.classList.add('error');
       el.animate([{transform:'translateX(0)'},{transform:'translateX(-5px)'},{transform:'translateX(5px)'},{transform:'translateX(-3px)'},{transform:'translateX(3px)'},{transform:'translateX(0)'}], {duration:280,easing:'ease-out'});
       el.addEventListener('input', () => el.classList.remove('error'), {once:true});
       return;
     }
-    let count = 0;
-    try { count = parseInt(localStorage.getItem('z_wl') || '0'); } catch(_) {}
-    count++;
-    try { localStorage.setItem('z_wl', count); } catch(_) {}
+
+    const cleanedPhone = "+234" + phone.replace(/\D/g,'');
+    const cleanedUsername = document.getElementById('f-phone').value.trim();
+
+    const res = await fetch('https://zentra-backend-server-production.up.railway.app/wishlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone }),
+    });
+    const data = await res.json();
+
     document.getElementById('form-body').style.display = 'none';
     const sv = document.getElementById('success-view');
     sv.classList.add('show');
-    document.getElementById('pos-num').textContent = '#' + (2000 + count).toLocaleString();
+    document.getElementById('pos-num').textContent = '#' + (data.position).toLocaleString();
   }
 </script>
 </body>
