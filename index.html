@@ -912,9 +912,9 @@
 
       <div class="success-state" id="success-view">
         <div class="success-ring">🎯</div>
-        <div class="success-title">You're in.</div>
+        <div class="success-title" id="success-msg">You're in.</div>
         <div class="success-pos" id="pos-num">#—</div>
-        <p class="success-desc">Watch your phone. Your invite comes directly from us.</p>
+        <p class="success-desc" id="success-desc">Watch your phone. Your invite comes directly from us.</p>
       </div>
     </div>
   </div>
@@ -1185,7 +1185,16 @@
       document.getElementById('form-body').style.display = 'none';
       const sv = document.getElementById('success-view');
       sv.classList.add('show');
+      document.getElementById('success-msg').textContent = 'You\'re in.';
+      document.getElementById('success-desc').textContent = 'Watch your phone. Your invite comes directly from us.';
       document.getElementById('pos-num').textContent = '#' + (data.position).toLocaleString();
+    } else {
+      document.getElementById('form-body').style.display = 'none';
+      const sv = document.getElementById('success-view');
+      sv.classList.add('show');
+      document.getElementById('success-msg').textContent = 'Odd.';
+      document.getElementById('success-desc').textContent = data.msg;
+      document.getElementById('pos-num').textContent = '';
     }
   }
 </script>
