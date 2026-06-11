@@ -1181,10 +1181,12 @@
     });
     const data = await res.json();
 
-    document.getElementById('form-body').style.display = 'none';
-    const sv = document.getElementById('success-view');
-    sv.classList.add('show');
-    document.getElementById('pos-num').textContent = '#' + (data.position).toLocaleString();
+    if (data.code === 0) {
+      document.getElementById('form-body').style.display = 'none';
+      const sv = document.getElementById('success-view');
+      sv.classList.add('show');
+      document.getElementById('pos-num').textContent = '#' + (data.position).toLocaleString();
+    }
   }
 </script>
 </body>
