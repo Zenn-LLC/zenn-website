@@ -1172,7 +1172,7 @@
     }
 
     const cleanedPhone = "+234" + phone.replace(/\D/g,'');
-    const cleanedUsername = document.getElementById('f-phone').value.trim();
+    const cleanedUsername = document.getElementById('f-moniker').value.trim();
 
     const res = await fetch('https://zentra-backend-server-production.up.railway.app/wishlist', {
       method: 'POST',
