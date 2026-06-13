@@ -1193,7 +1193,20 @@
       const sv = document.getElementById('success-view');
       sv.classList.add('show');
       document.getElementById('success-msg').textContent = 'Odd.';
-      document.getElementById('success-desc').textContent = data.msg;
+      const el = document.getElementById('success-desc');
+      el.textContent = data.msg;
+
+      const span = document.createElement('span');
+      span.textContent = ' Try again?';
+      span.style.color = 'var(--pink)';
+      span.style.cursor = 'pointer';
+      span.addEventListener('click', () => {
+        document.getElementById('form-body').style.display = '';
+        const sv = document.getElementById('success-view');
+        sv.classList.remove('show');
+      });
+
+      el.appendChild(span);
       document.getElementById('pos-num').textContent = '';
     }
   }
