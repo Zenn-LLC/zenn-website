@@ -1173,11 +1173,12 @@
 
     const cleanedPhone = "+234" + phone.replace(/\D/g,'');
     const cleanedUsername = document.getElementById('f-moniker').value.trim();
+    const cleanedGame = document.getElementById('f-game').value;
 
     const res = await fetch('https://zentra-backend-server-production.up.railway.app/wishlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone }),
+      body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone, game: cleanedGame }),
     });
     const data = await res.json();
 
