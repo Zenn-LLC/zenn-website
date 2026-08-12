@@ -897,6 +897,12 @@
           </select>
         </div>
 
+        
+        <div class="field">
+          <label class="field-label" for="f-moniker">How did you find us? (Optional)</label>
+          <input class="input" type="text" id="f-how" placeholder="e.g, a friend" autocomplete="nickname" />
+        </div>
+
         <button class="submit-btn" onclick="handleSubmit()">
           Secure My Spot
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1174,11 +1180,12 @@
     const cleanedPhone = "+234" + phone.replace(/\D/g,'');
     const cleanedUsername = document.getElementById('f-moniker').value.trim();
     const cleanedGame = document.getElementById('f-game').value;
+    const cleanedHow = document.getElementById("f-how").value.trim();
 
     const res = await fetch('https://zentra-backend-server-production-8f72.up.railway.app/wishlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone, game: cleanedGame }),
+      body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone, game: cleanedGame, how: cleanedHow }),
     });
     const data = await res.json();
 
