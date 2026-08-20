@@ -899,7 +899,7 @@
 
         
         <div class="field">
-          <label class="field-label" for="f-moniker">How did you find us? (Optional)</label>
+          <label class="field-label" for="f-how">How did you find us? (Optional)</label>
           <input class="input" type="text" id="f-how" placeholder="e.g, a friend" autocomplete="nickname" />
         </div>
 
@@ -1181,11 +1181,12 @@
     const cleanedUsername = document.getElementById('f-moniker').value.trim();
     const cleanedGame = document.getElementById('f-game').value;
     const cleanedHow = document.getElementById("f-how").value.trim();
+    const cleanedRef = new URLSearchParams(window.location.search).get('ref') || "";
 
     const res = await fetch('https://zentra-backend-server-production-8f72.up.railway.app/wishlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone, game: cleanedGame, how: cleanedHow }),
+      body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone, game: cleanedGame, how: cleanedHow, ref: cleanedRef }),
     });
     const data = await res.json();
 
