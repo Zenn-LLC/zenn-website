@@ -1206,7 +1206,7 @@
     const cleanedHow = document.getElementById("f-how").value.trim();
     const cleanedRef = new URLSearchParams(window.location.search).get('ref') || "";
 
-    const res = await fetch('https://zentra-backend-server-production-8f72.up.railway.app/wishlist', {
+    const res = await fetch('https://zentra-backend-server-production.up.railway.app/wishlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone, game: cleanedGame, how: cleanedHow, ref: cleanedRef }),
