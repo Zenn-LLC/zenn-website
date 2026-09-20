@@ -241,6 +241,43 @@
       margin-top: 3px;
     }
 
+    /* ── WAITLIST COUNTDOWN ── */
+    .countdown {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      max-width: 320px;
+      margin-bottom: 16px;
+    }
+    .cd-head {
+      padding: 11px 20px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px; font-weight: 500;
+      color: var(--muted);
+    }
+    .cd-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .cd-cell {
+      padding: 14px 4px 13px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .cd-cell:last-child { border-right: none; }
+    .cd-num {
+      font-family: var(--f-mono);
+      font-size: 26px; font-weight: 700;
+      line-height: 1; color: var(--white);
+      font-variant-numeric: tabular-nums;
+    }
+    .cd-num.sec { color: var(--pink); }
+    .cd-unit {
+      font-size: 10px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      margin-top: 6px;
+    }
+    .countdown.ended .cd-grid { display: none; }
+    .countdown.ended .cd-head { border-bottom: none; }
+
     /* ── HERO FORM CARD ── */
     .hero-right { position: relative; z-index: 2; }
 
@@ -794,6 +831,7 @@
         max-width: 100%;
         width: 100%;
       }
+      .countdown { max-width: 100%; }
       .about {
         grid-template-columns: 1fr;
         padding: 72px 20px;
@@ -848,6 +886,16 @@
     <p class="hero-sub">
       Zentra is Nigeria's <strong>real-money skill gaming platform</strong> — Ludo, Whot, and Pool against real opponents. Your rank, your game, your money.
     </p>
+
+    <div class="countdown" id="countdown" role="timer">
+      <div class="cd-head" id="cd-label">Waitlist closes Sept 29</div>
+      <div class="cd-grid">
+        <div class="cd-cell"><div class="cd-num" id="cd-d">--</div><div class="cd-unit">Days</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cd-h">--</div><div class="cd-unit">Hrs</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cd-m">--</div><div class="cd-unit">Min</div></div>
+        <div class="cd-cell"><div class="cd-num sec" id="cd-s">--</div><div class="cd-unit">Sec</div></div>
+      </div>
+    </div>
 
     <div class="hero-stats">
       <div class="stat-card">
@@ -1180,6 +1228,47 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  // Waitlist countdown
+  // Closes at the end of Sept 29, 2026 Lagos time (WAT, UTC+1). Change this one line to move the deadline.
+  const WAITLIST_ENDS = new Date('2026-09-29T23:59:59+01:00').getTime();
+
+  (function () {
+    const box   = document.getElementById('countdown');
+    const label = document.getElementById('cd-label');
+    const cells = {
+      d: document.getElementById('cd-d'),
+      h: document.getElementById('cd-h'),
+      m: document.getElementById('cd-m'),
+      s: document.getElementById('cd-s'),
+    };
+    const pad = n => String(n).padStart(2, '0');
+
+    function tick() {
+      const left = WAITLIST_ENDS - Date.now();
+      if (left <= 0) {
+        box.classList.add('ended');
+        label.textContent = 'Waitlist closed';
+        clearInterval(timer);
+        return;
+      }
+      const t = Math.floor(left / 1000);
+      const parts = {
+        d: Math.floor(t / 86400),
+        h: Math.floor((t % 86400) / 3600),
+        m: Math.floor((t % 3600) / 60),
+        s: t % 60,
+      };
+      for (const k in parts) {
+        const v = pad(parts[k]);
+        if (cells[k].textContent !== v) cells[k].textContent = v;
+      }
+    }
+
+    // Recomputed from the real clock each tick, so it stays accurate even if the tab was in the background.
+    const timer = setInterval(tick, 500);
+    tick();
+  })();
 
   // Phone format
   document.getElementById('f-phone').addEventListener('input', function() {
