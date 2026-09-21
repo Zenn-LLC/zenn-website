@@ -90,9 +90,15 @@
       text-decoration: none;
     }
     .logo-icon {
-      width: 34px; height: 34px;
-      display: flex; align-items: center; justify-content: center;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-image: url("./media/logo.png");
+      background-size: contain;     /* Ensures the image scales down to fit */
+      background-repeat: no-repeat; /* Prevents the image from tiling */
+      background-position: center;  /* Centers the background image */
       flex-shrink: 0;
     }
     .logo-text {
