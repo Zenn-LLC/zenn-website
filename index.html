@@ -1,1220 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-NG">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="/media/logo.png">
-  <title>Zentra: Play Real. Win by Skill.</title>
-    <!-- Primary meta -->
-  <meta name="description" content="Join the Zentra early access list. Nigeria's real-money skill gaming platform — Ludo, Whot, Pool & Chess. Drop your number, get your invite." />
-
-  <!-- Open Graph (WhatsApp, Telegram, Facebook, LinkedIn) -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://zenn.com.ng" />
-  <meta property="og:title"       content="Get in before launch — Zentra Early Access" />
-  <meta property="og:description" content="Nigeria's real-money skill gaming platform. Ludo, Whot, Pool & Chess against real opponents. Drop your number, we'll send your invite directly." />
-  <meta property="og:image"       content="https://zenn.com.ng/media/og.png" />
-  <meta property="og:image:width"  content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name"   content="Zenn Interactive Limited" />
-  <meta property="og:locale"      content="en_NG" />
-  <meta name="google-site-verification" content="yDr_aRxi8eD2abkz6lGHTPAvphuWYzvKdZe7hJhFxic" />
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site"        content="@hellofromzenn" />
-  <meta name="twitter:title"       content="Get in before launch — Zentra Early Access" />
-  <meta name="twitter:description" content="Nigeria's real-money skill gaming platform. Ludo, Whot, Pool & Chess. Drop your number, get your invite." />
-  <meta name="twitter:image"       content="https://zenn.com.ng/media/og.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:       #09090F;
-      --bg2:      #0F0F18;
-      --surface:  #13131E;
-      --surface2: #1A1A28;
-      --border:   rgba(255,255,255,0.07);
-      --border2:  rgba(255,255,255,0.12);
-      --pink:     #F0366E;
-      --pink-dim: #A82450;
-      --pink-glow:rgba(240,54,110,0.18);
-      --purple:   #7C3AED;
-      --purple-dim:rgba(124,58,237,0.15);
-      --white:    #F4F2FB;
-      --muted:    #6E6C85;
-      --muted2:   #2E2C42;
-      --green:    #22C97A;
-      --f-head:   'Syne', sans-serif;
-      --f-body:   'DM Sans', sans-serif;
-      --f-mono:   'Space Grotesk', sans-serif;
-      --r-sm:     8px;
-      --r-md:     14px;
-      --r-lg:     20px;
-      --r-xl:     28px;
-      --r-full:   999px;
-    }
-
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: var(--f-body);
-      font-size: 15px;
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--pink-dim); border-radius: 4px; }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 40px;
-      transition: background 0.3s, border-color 0.3s;
-      border-bottom: 1px solid transparent;
-    }
-    nav.scrolled {
-      background: rgba(9,9,15,0.92);
-      backdrop-filter: blur(16px);
-      border-color: var(--border);
-    }
-
-    .logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-    }
-    .logo-icon {
-      width: 34px;
-      height: 31px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url("./media/logo.png");
-      background-size: contain;     /* Ensures the image scales down to fit */
-      background-repeat: no-repeat; /* Prevents the image from tiling */
-      background-position: center;  /* Centers the background image */
-      flex-shrink: 0;
-    }
-    .logo-text {
-      font-family: var(--f-head);
-      font-weight: 700; font-size: 14px;
-      letter-spacing: 0.04em;
-      color: var(--white);
-      line-height: 1.2;
-    }
-    .logo-sub {
-      font-size: 10px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--muted);
-      font-weight: 400;
-    }
-
-    .nav-right {
-      display: flex; align-items: center; gap: 8px;
-    }
-    .nav-link {
-      font-size: 13px; font-weight: 500; color: var(--muted);
-      text-decoration: none; padding: 8px 16px;
-      border-radius: var(--r-full);
-      transition: color 0.2s, background 0.2s;
-    }
-    .nav-link:hover { color: var(--white); background: var(--surface); }
-    .nav-btn {
-      font-size: 13px; font-weight: 600; color: #fff;
-      background: var(--pink); padding: 8px 20px;
-      border-radius: var(--r-full);
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-      letter-spacing: 0.02em;
-    }
-    .nav-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 40px;
-      align-items: center;
-      padding: 100px 40px 60px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* background elements */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -200px; right: -100px;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -100px; left: 30%;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, var(--pink-glow) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .hero-left { position: relative; z-index: 2; }
-
-    .live-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--surface); border: 1px solid var(--border2);
-      padding: 6px 14px; border-radius: var(--r-full);
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 28px;
-    }
-    .live-dot {
-      width: 7px; height: 7px;
-      background: var(--green); border-radius: 50%;
-      box-shadow: 0 0 8px var(--green);
-      animation: pulse-dot 2s ease infinite;
-    }
-    @keyframes pulse-dot {
-      0%,100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .hero-headline {
-      font-family: var(--f-head);
-      font-size: clamp(44px, 6.5vw, 88px);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -0.02em;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-    .hero-headline .accent { color: var(--pink); }
-    .hero-headline .dim {
-      color: transparent;
-      -webkit-text-stroke: 1px var(--muted2);
-    }
-
-    .hero-sub {
-      font-size: 16px; font-weight: 300;
-      color: var(--muted); line-height: 1.75;
-      max-width: 460px; margin-bottom: 40px;
-    }
-    .hero-sub strong { color: var(--white); font-weight: 500; }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      max-width: 320px;
-    }
-    .stat-card {
-      padding: 18px 20px;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .stat-card:nth-child(2n) { border-right: none; }
-    .stat-card:nth-last-child(-n+2) { border-bottom: none; }
-    .stat-icon {
-      width: 26px; height: 26px;
-      background: rgba(240,54,110,0.1);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 10px;
-    }
-    .stat-icon svg { width: 13px; height: 13px; fill: var(--pink); }
-    .stat-num {
-      font-family: var(--f-mono);
-      font-size: 18px; font-weight: 700;
-      color: var(--white); line-height: 1;
-    }
-    .stat-num span { color: var(--pink); }
-    .stat-label {
-      font-size: 10px; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--muted);
-      margin-top: 3px;
-    }
-
-    /* ── HERO FORM CARD ── */
-    .hero-right { position: relative; z-index: 2; }
-
-    .form-card {
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-radius: var(--r-xl);
-      padding: 36px 32px;
-      position: relative;
-      overflow: hidden;
-    }
-    .form-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--pink), var(--purple));
-      border-radius: var(--r-xl) var(--r-xl) 0 0;
-    }
-
-    .form-card-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(240,54,110,0.12);
-      border: 1px solid rgba(240,54,110,0.25);
-      color: var(--pink); font-size: 11px;
-      font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 12px; border-radius: var(--r-full);
-      margin-bottom: 16px;
-    }
-    .form-card-title {
-      font-family: var(--f-head);
-      font-size: 22px; font-weight: 700;
-      color: var(--white); margin-bottom: 4px;
-      line-height: 1.25;
-    }
-    .form-card-sub {
-      font-size: 13px; color: var(--muted);
-      margin-bottom: 24px; line-height: 1.5;
-    }
-
-    .field { margin-bottom: 14px; }
-    .field-label {
-      display: block; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 6px;
-    }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-    .input {
-      width: 100%;
-      background: var(--bg2);
-      border: 1px solid var(--border2);
-      border-radius: var(--r-sm);
-      color: var(--white);
-      font-family: var(--f-body);
-      font-size: 14px;
-      padding: 11px 14px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .input::placeholder { color: var(--muted); }
-    .input:focus {
-      border-color: var(--pink);
-      box-shadow: 0 0 0 3px rgba(240,54,110,0.12);
-    }
-    .input.error {
-      border-color: var(--pink);
-      box-shadow: 0 0 0 3px rgba(240,54,110,0.12);
-    }
-
-    .phone-wrap { position: relative; }
-    .phone-prefix {
-      position: absolute; left: 0; top: 0; bottom: 0;
-      display: flex; align-items: center; padding: 0 12px;
-      font-size: 13px; font-weight: 600; color: var(--pink);
-      background: rgba(240,54,110,0.08);
-      border-right: 1px solid var(--border2);
-      border-radius: var(--r-sm) 0 0 var(--r-sm);
-      pointer-events: none;
-    }
-    .phone-wrap .input { padding-left: 64px; }
-
-    .select {
-      width: 100%;
-      background: var(--bg2);
-      border: 1px solid var(--border2);
-      border-radius: var(--r-sm);
-      color: var(--white);
-      font-family: var(--f-body);
-      font-size: 14px;
-      padding: 11px 14px;
-      outline: none;
-      cursor: pointer;
-      -webkit-appearance: none;
-      transition: border-color 0.2s;
-    }
-    .select:focus { border-color: var(--pink); }
-    .select option { background: var(--surface); }
-
-    .submit-btn {
-      width: 100%; margin-top: 18px;
-      background: linear-gradient(135deg, var(--pink), #C4246A);
-      color: #fff;
-      font-family: var(--f-body);
-      font-size: 14px; font-weight: 700;
-      letter-spacing: 0.04em;
-      padding: 14px;
-      border: none; border-radius: var(--r-md);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(240,54,110,0.3);
-    }
-    .submit-btn:hover {
-      opacity: 0.9; transform: translateY(-1px);
-      box-shadow: 0 6px 28px rgba(240,54,110,0.4);
-    }
-    .submit-btn:active { transform: translateY(0); }
-
-    .form-foot {
-      font-size: 11px; color: var(--muted);
-      text-align: center; margin-top: 12px; line-height: 1.5;
-    }
-
-    /* perks below form */
-    .form-perks {
-      display: flex; flex-direction: column; gap: 8px;
-      margin-top: 20px; padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-    .form-perk {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 12px; color: var(--muted);
-    }
-    .form-perk-check {
-      width: 18px; height: 18px; flex-shrink: 0;
-      background: rgba(34,201,122,0.1);
-      border: 1px solid rgba(34,201,122,0.25);
-      border-radius: var(--r-full);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 9px; color: var(--green);
-    }
-
-    /* ── SUCCESS STATE ── */
-    .success-state {
-      display: none;
-      flex-direction: column; align-items: center;
-      text-align: center; padding: 48px 24px; gap: 12px;
-    }
-    .success-state.show { display: flex; }
-    .success-ring {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      background: rgba(240,54,110,0.1);
-      border: 2px solid var(--pink);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px;
-      animation: ring-pop 0.45s cubic-bezier(0.34,1.56,0.64,1) forwards;
-    }
-    @keyframes ring-pop {
-      from { transform: scale(0); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-    .success-title {
-      font-family: var(--f-head); font-size: 26px;
-      font-weight: 800; color: var(--white);
-    }
-    .success-pos {
-      font-family: var(--f-mono); font-size: 52px;
-      font-weight: 700; color: var(--pink);
-      line-height: 1;
-    }
-    .success-desc {
-      font-size: 13px; color: var(--muted);
-      max-width: 240px; line-height: 1.6;
-    }
-
-    /* ── TICKER ── */
-    .ticker {
-      overflow: hidden;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 0;
-      background: var(--bg2);
-    }
-    .ticker-inner {
-      display: flex; width: max-content;
-      animation: ticker-scroll 30s linear infinite;
-    }
-    @keyframes ticker-scroll {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-    .ticker-item {
-      display: flex; align-items: center; gap: 20px;
-      padding: 0 28px; white-space: nowrap;
-      font-family: var(--f-mono); font-size: 11px;
-      font-weight: 500; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--muted);
-    }
-    .ticker-sep { color: var(--pink); font-size: 8px; }
-
-    /* ── SECTION COMMON ── */
-    .section-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--pink);
-      margin-bottom: 16px;
-    }
-    .section-tag::before {
-      content: '';
-      display: block; width: 20px; height: 2px;
-      background: var(--pink); border-radius: 2px;
-    }
-    .section-title {
-      font-family: var(--f-head);
-      font-size: clamp(34px, 4.5vw, 60px);
-      font-weight: 800; line-height: 1.05;
-      letter-spacing: -0.02em; color: var(--white);
-    }
-
-    /* ── ABOUT ── */
-    .about {
-      padding: 100px 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start;
-    }
-
-    .about-body {
-      font-size: 16px; font-weight: 300;
-      color: var(--muted); line-height: 1.85;
-      margin-top: 24px;
-    }
-    .about-body strong { color: var(--white); font-weight: 500; }
-
-    .about-pillars {
-      display: flex; flex-direction: column; gap: 16px;
-      margin-top: 36px;
-    }
-    .pillar {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 20px 24px;
-      display: flex; gap: 18px; align-items: flex-start;
-      transition: border-color 0.2s;
-    }
-    .pillar:hover { border-color: var(--border2); }
-    .pillar-num {
-      font-family: var(--f-mono); font-size: 13px;
-      font-weight: 600; color: var(--pink);
-      background: rgba(240,54,110,0.1);
-      border-radius: var(--r-sm);
-      padding: 4px 10px; flex-shrink: 0; margin-top: 2px;
-    }
-    .pillar-title {
-      font-family: var(--f-head); font-size: 15px;
-      font-weight: 700; color: var(--white); margin-bottom: 4px;
-    }
-    .pillar-desc {
-      font-size: 13px; color: var(--muted); line-height: 1.6;
-    }
-
-    /* right side visual */
-    .about-right { padding-top: 8px; }
-    .about-right .section-title { margin-bottom: 0; }
-
-    .games-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 12px; margin-top: 28px;
-    }
-    .game-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 24px 20px;
-      transition: border-color 0.25s, transform 0.25s;
-      cursor: default;
-    }
-    .game-card:hover {
-      border-color: var(--pink-dim);
-      transform: translateY(-3px);
-    }
-    .game-card.featured {
-      background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(240,54,110,0.07));
-      border-color: rgba(124,58,237,0.25);
-    }
-    .game-icon {
-      width: 44px; height: 44px;
-      border-radius: var(--r-md);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 14px;
-      font-family: var(--f-mono);
-      font-weight: 700;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .game-icon.pool  { background: rgba(124,58,237,0.12); color: #9B72F0; }
-    .game-icon.ludo  { background: rgba(212,168,67,0.12);  color: #D4A843; }
-    .game-icon.whot  { background: rgba(59,130,246,0.12);  color: #60A5FA; }
-    .game-icon.chess { background: rgba(34,201,122,0.12);  color: #22C97A; }
-    .game-name {
-      font-family: var(--f-head); font-size: 18px;
-      font-weight: 700; color: var(--white);
-    }
-    .game-desc { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .game-tag {
-      display: inline-block; margin-top: 10px;
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: var(--r-full);
-      background: rgba(240,54,110,0.1);
-      border: 1px solid rgba(240,54,110,0.2);
-      color: var(--pink);
-    }
-
-    /* ── PRODUCTS ── */
-    .products {
-      padding: 100px 40px;
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .products-head {
-      display: flex; justify-content: space-between;
-      align-items: flex-end; margin-bottom: 48px;
-    }
-    .products-head p {
-      font-size: 14px; color: var(--muted);
-      max-width: 280px; text-align: right; line-height: 1.6;
-    }
-
-    .products-grid {
-      display: grid; grid-template-columns: 5fr 3fr; gap: 16px;
-    }
-    .prod-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 40px 36px; position: relative; overflow: hidden;
-      transition: border-color 0.25s;
-    }
-    .prod-card:hover { border-color: var(--border2); }
-    .prod-card.main {
-      background: linear-gradient(140deg, var(--surface) 60%, rgba(124,58,237,0.08));
-    }
-    .prod-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 4px 12px;
-      border-radius: var(--r-full); margin-bottom: 20px;
-    }
-    .prod-badge.live {
-      background: rgba(34,201,122,0.1);
-      border: 1px solid rgba(34,201,122,0.25);
-      color: var(--green);
-    }
-    .prod-badge.soon {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-    .prod-name {
-      font-family: var(--f-head);
-      font-size: clamp(38px, 5vw, 62px);
-      font-weight: 800; line-height: 0.95;
-      letter-spacing: -0.02em; color: var(--white);
-      margin-bottom: 14px;
-    }
-    .prod-desc {
-      font-size: 14px; color: var(--muted);
-      line-height: 1.7; margin-bottom: 28px;
-      max-width: 400px;
-    }
-    .prod-games {
-      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;
-    }
-    .prod-game-pill {
-      font-size: 12px; font-weight: 500;
-      padding: 6px 14px; border-radius: var(--r-full);
-      background: var(--surface2);
-      border: 1px solid var(--border2);
-      color: var(--white);
-    }
-    .prod-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 600;
-      color: var(--pink); text-decoration: none;
-      background: none; border: none; cursor: pointer;
-      padding: 0; letter-spacing: 0.04em;
-      transition: gap 0.2s;
-    }
-    .prod-link:hover { gap: 12px; }
-    .prod-actions {
-      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
-    }
-    .prod-link.secondary {
-      color: var(--muted);
-      border: 1px solid var(--border2);
-      padding: 10px 18px;
-      border-radius: var(--r-full);
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
-    }
-    .prod-link.secondary:hover {
-      color: var(--white);
-      border-color: var(--border2);
-      background: var(--surface2);
-      gap: 8px;
-    }
-    .prod-num {
-      position: absolute; bottom: 28px; right: 32px;
-      font-family: var(--f-head); font-size: 90px;
-      font-weight: 800; color: var(--border);
-      line-height: 1; pointer-events: none;
-      user-select: none;
-    }
-
-    /* ── SOCIALS ── */
-    .socials {
-      padding: 100px 40px;
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .socials-left .section-title { margin-bottom: 16px; }
-        .socials-sub {
-      font-size: 15px; font-weight: 300;
-      color: var(--muted); line-height: 1.75;
-    }
-    .socials-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .social-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 20px 22px;
-      display: flex; align-items: center; gap: 14px;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.2s, background 0.2s;
-    }
-    .social-card:hover {
-      border-color: var(--border2);
-      transform: translateY(-2px);
-      background: var(--surface2);
-    }
-    .social-icon {
-      width: 40px; height: 40px; flex-shrink: 0;
-      border-radius: var(--r-md);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .social-icon svg { width: 18px; height: 18px; }
-    .social-icon.tw  { background: rgba(255,255,255,0.05); }
-    .social-icon.tw svg { fill: #e7e9ea; }
-    .social-icon.ig  { background: rgba(225,48,108,0.1); }
-    .social-icon.ig svg { fill: #e1306c; }
-    .social-icon.yt  { background: rgba(255,0,0,0.1); }
-    .social-icon.yt svg { fill: #ff0000; }
-    .social-icon.tt  { background: rgba(255,255,255,0.05); }
-    .social-icon.tt svg { fill: var(--white); }
-    .social-icon.em  { background: rgba(240,54,110,0.1); }
-    .social-icon.em svg { fill: var(--pink); }
-    .social-handle {
-      font-family: var(--f-mono);
-      font-size: 13px; font-weight: 600;
-      color: var(--white); line-height: 1.2;
-    }
-    .social-platform {
-      font-size: 11px; color: var(--muted);
-      letter-spacing: 0.06em; margin-top: 2px;
-      text-transform: uppercase;
-    }
-    .social-card.email-card {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, rgba(240,54,110,0.06), rgba(124,58,237,0.06));
-      border-color: rgba(240,54,110,0.15);
-    }
-    .social-card.email-card:hover { border-color: rgba(240,54,110,0.3); }
-
-    @media (max-width: 960px) {
-      .socials { grid-template-columns: 1fr; padding: 72px 20px; gap: 40px; }
-      .socials-grid { grid-template-columns: 1fr; }
-      .social-handle { font-size: 12px; word-break: break-all; }
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 64px 40px 36px;
-      border-top: 1px solid var(--border);
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px; margin-bottom: 56px;
-    }
-    .footer-brand-name {
-      font-family: var(--f-head); font-size: 15px;
-      font-weight: 700; color: var(--white); margin: 14px 0 4px;
-    }
-    .footer-brand-rc {
-      font-size: 11px; color: var(--muted2);
-      letter-spacing: 0.05em; margin-bottom: 14px;
-    }
-    .footer-brand-desc {
-      font-size: 13px; color: var(--muted); line-height: 1.7;
-      max-width: 260px;
-    }
-    .footer-col-head {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--pink);
-      margin-bottom: 18px;
-    }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-    .footer-links a {
-      font-size: 13px; color: var(--muted);
-      text-decoration: none; transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--white); }
-    .footer-bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      border-top: 1px solid var(--border); padding-top: 24px;
-      font-size: 12px; color: var(--muted);
-    }
-
-    /* ── FADE ANIMATION ── */
-    .fade {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .fade.d1 { transition-delay: 0.1s; }
-    .fade.d2 { transition-delay: 0.2s; }
-    .fade.d3 { transition-delay: 0.3s; }
-    .fade.in { opacity: 1; transform: none; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      nav { padding: 14px 20px; }
-      .nav-link { display: none; }
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 90px 20px 48px;
-        gap: 48px;
-        overflow: hidden;
-      }
-      .hero::before, .hero::after { display: none; }
-      .hero-stats {
-        max-width: 100%;
-        width: 100%;
-      }
-      .about {
-        grid-template-columns: 1fr;
-        padding: 72px 20px;
-        gap: 48px;
-      }
-      .about-right .section-title { font-size: 34px; }
-      .games-grid { grid-template-columns: 1fr 1fr; }
-      .products { padding: 72px 20px; }
-      .products-head { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .products-head p { text-align: left; }
-      .products-grid { grid-template-columns: 1fr; }
-      .socials { grid-template-columns: 1fr; padding: 72px 20px; gap: 40px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-      .field-row { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zentra: skill games for real stakes</title>
+<meta name="description" content="Play Chess, Whot, Lie, Ludo and Pool against real people for real money, in your browser. 18+, Nigeria only.">
+<link rel="canonical" href="https://zenn.com.ng/">
+<meta name="theme-color" content="#09090F">
+<link rel="icon" href="/media/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zentra">
+<meta property="og:locale" content="en_NG">
+<meta property="og:url" content="https://zenn.com.ng/">
+<meta property="og:title" content="Zentra: skill games for real stakes">
+<meta property="og:description" content="Play Chess, Whot, Lie, Ludo and Pool against real people for real money, in your browser. 18+, Nigeria only.">
+<meta property="og:image" content="https://zenn.com.ng/media/og/index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hellofromzenn">
+<meta name="twitter:title" content="Zentra: skill games for real stakes">
+<meta name="twitter:description" content="Play Chess, Whot, Lie, Ludo and Pool against real people for real money, in your browser. 18+, Nigeria only.">
+<meta name="twitter:image" content="https://zenn.com.ng/media/og/index.png">
+<meta name="google-site-verification" content="yDr_aRxi8eD2abkz6lGHTPAvphuWYzvKdZe7hJhFxic">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=mwgvofmy">
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="nav">
-  <a href="#" class="logo">
-    <div class="logo-icon"></div>
-    <div>
-      <div class="logo-text">Zenn Interactive</div>
-      <div class="logo-sub">Limited</div>
-    </div>
-  </a>
-  <div class="nav-right">
-    <a href="#about" class="nav-link">About</a>
-    <a href="#products" class="nav-link">Products</a>
-    <a href="#socials" class="nav-link">Socials</a>
-    <a href="#hero-form" class="nav-btn">Join Waitlist</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-left fade">
-    <div class="live-badge">
-      Beta · Now Accepting Signups
-    </div>
-
-    <h1 class="hero-headline">
-      Play Real.<br>
-      <span class="accent">Win</span> by<br>
-      <span class="dim">Skill.</span>
-    </h1>
-
-    <p class="hero-sub">
-      Zentra is Nigeria's <strong>real-money skill gaming platform</strong>, Ludo, Whot, and Pool against real opponents. Your rank, your game, your money.
-    </p>
-
-  </div>
-
-  <!-- FORM -->
-  <div class="hero-right fade d2" id="hero-form">
-    <div class="form-card">
-      <div id="form-body">
-        <div class="form-card-tag">🎯 Early Access</div>
-        <div class="form-card-title">Get Your Invite</div>
-        <p class="form-card-sub">We'll send you a direct invite when your spot is ready. No spam.</p>
-
-        <div class="field">
-          <label class="field-label" for="f-moniker">Your Username</label>
-          <input class="input" type="text" id="f-moniker" placeholder="e.g. Abdulazeez" autocomplete="nickname" />
-        </div>
-
-        <div class="field">
-          <label class="field-label" for="f-phone">Phone Number</label>
-          <div class="phone-wrap">
-            <div class="phone-prefix">+234</div>
-            <input class="input" type="tel" id="f-phone" placeholder="80 0000 0000" maxlength="12" autocomplete="tel" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="field-label" for="f-game">Favourite Game</label>
-          <select class="select" id="f-game">
-            <option value="">Pick your game…</option>
-            <option value="ludo">Ludo 🎲</option>
-            <option value="whot">Whot 🃏</option>
-            <option value="pool">Pool 🎱</option>
-            <option value="chess">Chess ♟️</option>
-            <option value="all">All of them</option>
-          </select>
-        </div>
-
-        
-        <div class="field">
-          <label class="field-label" for="f-how">How did you find us? (Optional)</label>
-          <input class="input" type="text" id="f-how" placeholder="e.g, a friend" autocomplete="nickname" />
-        </div>
-
-        <button class="submit-btn" onclick="handleSubmit()">
-          Secure My Spot
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <p class="form-foot">Your number is only used for your invite. We don't share it. By joining you agree to our <a href="/terms" style="color:inherit;text-decoration:underline;">Terms of Service</a>.</p>
-
-        <div class="form-perks">
-          <div class="form-perk"><div class="form-perk-check">✓</div>Priority access before public launch</div>
-          <div class="form-perk"><div class="form-perk-check">✓</div>Exclusive founding-user cosmetics</div>
-          <div class="form-perk"><div class="form-perk-check">✓</div>First spot in the ZAR rating ladder</div>
-        </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="/"><img class="logo-mark" src="/media/logo.png" alt="" width="22" height="25"><span>Zentra</span></a>
+    <nav class="top-nav" aria-label="Main"><a href="/games/">Games</a><a href="/matches/">Matches</a><a href="/fees/">Money</a><a href="/clubs/">Clubs</a><a href="/faq/">Help</a></nav>
+    <a class="btn btn-sm top-play" href="https://zentra.com.ng">Play now</a>
+    <details class="menu">
+      <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+      <div class="menu-panel">
+        <div><p class="menu-head">Start</p><a href="/zentra/">What is Zentra</a><a href="/start/">Getting started</a><a href="/play/">Play now</a></div><div><p class="menu-head">Games</p><a href="/games/">All games</a><a href="/games/chess/">Chess</a><a href="/games/chess/tips/">Chess tips</a><a href="/games/whot/">Whot</a><a href="/games/whot/tips/">Whot tips</a><a href="/games/lie/">Lie</a><a href="/games/lie/tips/">Lie tips</a><a href="/games/ludo/">Ludo</a><a href="/games/ludo/tips/">Ludo tips</a><a href="/games/pool/">Pool</a><a href="/games/pool/tips/">Pool tips</a><a href="/computer-players/">Computer players</a><a href="/games/settings/">Game settings</a></div><div><p class="menu-head">Matches</p><a href="/matches/">How matches work</a><a href="/matches/quick-match/">Quick Match</a><a href="/matches/create/">Create or join a match</a><a href="/matches/long-clock/">24-hour matches</a><a href="/tournaments/">Tournaments</a><a href="/match-ups/">Match-ups</a><a href="/matches/clocks/">Clocks, resigning and rematches</a><a href="/matches/chat/">Match chat</a></div><div><p class="menu-head">Money</p><a href="/fees/">Stakes and fees</a><a href="/wallet/">Your wallet</a><a href="/wallet/deposits/">Deposits</a><a href="/wallet/withdrawals/">Withdrawals</a><a href="/wallet/verification/">Verifying your identity</a><a href="/security/">Account security</a></div><div><p class="menu-head">Clubs and watching</p><a href="/clubs/">Clubs</a><a href="/clubs/games/">Club chat and games</a><a href="/clubs/leagues/">Club leagues</a><a href="/watch/">Watching live</a><a href="/watch/gifts/">Gifts</a><a href="/community/">Profiles and following</a></div><div><p class="menu-head">Skill and fairness</p><a href="/ratings/">Ratings</a><a href="/reviews/">Game reviews</a><a href="/achievements/">Achievements</a><a href="/fair-play/">Fair play</a></div><div><p class="menu-head">Safety and help</p><a href="/responsible-gambling/">Play responsibly</a><a href="/responsible-gambling/tools/">Limits, breaks and self-exclusion</a><a href="/safety/">Blocking and reporting</a><a href="/support/">Support and disputes</a><a href="/faq/">FAQ</a></div><div><p class="menu-head">Company</p><a href="/promoters/">Promoters</a><a href="/about/">About Zenn</a><a href="/updates/">Updates</a><a href="/contact/">Contact</a><a href="/terms/">Terms of Service</a><a href="/privacy/">Privacy</a><a href="/brand/">Brand</a></div>
       </div>
-
-      <div class="success-state" id="success-view">
-        <div class="success-ring">🎯</div>
-        <div class="success-title" id="success-msg">You're in.</div>
-        <div class="success-pos" id="pos-num">#—</div>
-        <p class="success-desc" id="success-desc">Watch your phone. Your invite comes directly from us.</p>
-      </div>
+    </details>
+  </div>
+</header>
+<main id="main" class="home"><section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Zentra by Zenn</p>
+    <h1>Skill games for real stakes.</h1>
+    <p>Play Chess, Whot, Lie, Ludo and Pool against real people, with money on the match. Zentra runs in your browser, on your phone or computer. Nothing to install.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://zentra.com.ng">Play now</a>
+      <a class="btn btn-quiet" href="/matches/">How matches work</a>
     </div>
+    <p class="hero-small">18+ only, in Nigeria. Zentra keeps 10% of what is staked in each match.</p>
+  </div>
+  <figure class="match-card" aria-label="An example match">
+    <div class="mc-top">
+      <div class="mc-game"><span class="mc-icon">W</span><div><b>Whot</b><small>Example challenge · 15 minutes each</small></div></div>
+    </div>
+    <div class="mc-players">
+      <div class="mc-player"><b>You</b><small>Rating 1,000</small></div>
+      <span class="mc-vs">vs</span>
+      <div class="mc-player"><b>Opponent</b><small>Rating 1,000</small></div>
+    </div>
+    <div class="mc-pot">
+      <div><small>Stake each</small><b>₦1,000</b></div>
+      <div><small>Staked</small><b>₦2,000</b></div>
+      <div><small>Winner gets</small><b class="win">₦1,800</b></div>
+    </div>
+    <figcaption class="mc-foot">Every match shows what the winner takes before you join. The other ₦200 is Zentra's 10% fee.</figcaption>
+  </figure>
+</section>
+
+<section class="band">
+  <div class="band-head">
+    <h2>Five games</h2>
+    <p>Games people in Nigeria already play, one on one. Each has its own clock, rules page and tips.</p>
+  </div>
+  <div class="grid">
+    <a class="card game-tile" href="/games/chess/"><span class="mc-icon">♞</span><h3>Chess</h3><small>15 minutes each</small><p>Standard chess. A draw goes to whoever has more time left.</p><span class="more">Rules</span></a>
+    <a class="card game-tile" href="/games/whot/"><span class="mc-icon">W</span><h3>Whot</h3><small>6 cards each</small><p>Match the shape or number. Use your special cards well and get rid of your hand first.</p><span class="more">Rules</span></a>
+    <a class="card game-tile" href="/games/lie/"><span class="mc-icon">?</span><h3>Lie</h3><small>Zentra's own game</small><p>Play a card face down and say what it is. Your opponent can check you.</p><span class="more">Rules</span></a>
+    <a class="card game-tile" href="/games/ludo/"><span class="mc-icon">⚅</span><h3>Ludo</h3><small>20 minutes each</small><p>Two colours each and two dice. Bring all eight tokens home first.</p><span class="more">Rules</span></a>
+    <a class="card game-tile" href="/games/pool/"><span class="mc-icon">8</span><h3>Pool</h3><small>8-ball</small><p>Clear your group, then sink the 8-ball. Fouls give your opponent ball in hand.</p><span class="more">Rules</span></a>
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-inner" aria-hidden="true">
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Zentra</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Ludo</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Whot</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Pool</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Chess</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Skill-Based Gaming</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Real-Money P2P</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Zenn Interactive Ltd</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>ZAR Rating System</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Lagos, Nigeria</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>West Africa</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Zentra</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Ludo</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Whot</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Pool</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Chess</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Skill-Based Gaming</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Real-Money P2P</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Zenn Interactive Ltd</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>ZAR Rating System</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>Lagos, Nigeria</div>
-    <div class="ticker-item"><span class="ticker-sep">◆</span>West Africa</div>
+<section class="band">
+  <div class="band-head">
+    <h2>Ways to play</h2>
+    <p>Get paired in seconds, set up your own match, or play for your club.</p>
   </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="fade">
-    <div class="section-tag">Our Mission</div>
-    <h2 class="section-title">Built for<br>the Arena</h2>
-    <p class="about-body">
-      Zenn Interactive Limited is a <strong>Lagos-based technology company</strong> building the competitive layer of African gaming. We make products where your skill determines everything — <strong>no luck, no randomness</strong>, just who's better at the game.
-    </p>
-    <div class="about-pillars">
-      <div class="pillar fade d1">
-        <div class="pillar-num">01</div>
-        <div>
-          <div class="pillar-title">Skill-First Design</div>
-          <div class="pillar-desc">Game mechanics where consistent players rise and results track real ability.</div>
-        </div>
-      </div>
-      <div class="pillar fade d2">
-        <div class="pillar-num">02</div>
-        <div>
-          <div class="pillar-title">Server-Authoritative</div>
-          <div class="pillar-desc">Every result is decided server-side. No client manipulation, no disputes.</div>
-        </div>
-      </div>
-      <div class="pillar fade d3">
-        <div class="pillar-num">03</div>
-        <div>
-          <div class="pillar-title">African by Default</div>
-          <div class="pillar-desc">Games West Africans already love — built with infrastructure they deserve.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="about-right fade d2">
-    <div class="section-tag">Games</div>
-    <h2 class="section-title">Four<br>Games.<br>One<br>Platform.</h2>
-    <div class="games-grid">
-      <div class="game-card featured">
-        <div class="game-icon pool">◉</div>
-        <div class="game-name">Pool</div>
-        <div class="game-desc">Server-simulated physics, keyframe replay.</div>
-        <div class="game-tag">Flagship</div>
-      </div>
-      <div class="game-card">
-        <div class="game-icon ludo">⚅</div>
-        <div class="game-name">Ludo</div>
-        <div class="game-desc">Ranked, real stakes</div>
-      </div>
-      <div class="game-card">
-        <div class="game-icon whot">W</div>
-        <div class="game-name">Whot</div>
-        <div class="game-desc">Nigeria's card game</div>
-      </div>
-      <div class="game-card">
-        <div class="game-icon chess">♞</div>
-        <div class="game-name">Chess</div>
-        <div class="game-desc">Pure strategy, pure skill</div>
-      </div>
-    </div>
+  <div class="grid">
+    <a class="card" href="/matches/quick-match/"><h3>Quick Match</h3><p>Join the queue at ₦200 or ₦500 and get paired with another player at your stake.</p><span class="more">Read more</span></a>
+    <a class="card" href="/matches/create/"><h3>Challenges</h3><p>Pick a game and a stake from ₦100 to ₦10,000, then invite someone or leave it open.</p><span class="more">Read more</span></a>
+    <a class="card" href="/tournaments/"><h3>Tournaments</h3><p>Brackets of 4 to 256 players. Everyone stakes the same, and the winner takes the pot.</p><span class="more">Read more</span></a>
+    <a class="card" href="/match-ups/"><h3>Match-ups</h3><p>A best-of-3 to best-of-11 series against one person, for one stake.</p><span class="more">Read more</span></a>
+    <a class="card" href="/clubs/"><h3>Clubs and leagues</h3><p>Join a club for your game, chat, play clubmates and take on other clubs in divisions.</p><span class="more">Read more</span></a>
+    <a class="card" href="/watch/"><h3>Watching</h3><p>Watch live games, react to good moves and send a player a gift.</p><span class="more">Read more</span></a>
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products" id="products">
-  <div class="products-head fade">
-    <div>
-      <div class="section-tag">Our Products</div>
-      <h2 class="section-title">The Platform<br>& The Vision</h2>
-    </div>
-    <p>Zentra is live in beta. More products are in the pipeline under Zenn Interactive and Prism Technologies.</p>
-  </div>
-
-  <div class="products-grid">
-    <div class="prod-card main fade">
-      <div class="prod-badge live"><span style="display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;"></span> Beta · Active</div>
-      <div class="prod-name">Zentra</div>
-      <p class="prod-desc">A real-money, peer-to-peer skill gaming platform for Nigeria and West Africa. Play the games you know against real opponents — your ZAR rating tracks your actual skill level.</p>
-      <div class="prod-games">
-        <span class="prod-game-pill">Ludo</span>
-        <span class="prod-game-pill">Whot</span>
-        <span class="prod-game-pill">Pool</span>
-        <span class="prod-game-pill">Chess</span>
-      </div>
-      <div class="prod-actions">
-        <button class="prod-link" onclick="document.getElementById('hero-form').scrollIntoView({behavior:'smooth'})">
-          Get Early Access
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <a class="prod-link secondary" href="how-zentra-works/">
-          How Zentra Works
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="prod-num">01</div>
-    </div>
-
-    <div class="prod-card fade d1">
-      <div class="prod-badge soon">Coming Soon</div>
-      <div class="prod-name" style="font-size:clamp(32px,4vw,48px)">Replay</div>
-      <p class="prod-desc" style="font-size:13px">A music platform where artists turn their songs into playable levels. By Prism Technologies Limited.</p>
-      <div class="prod-num">02</div>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIALS -->
-<section class="socials" id="socials">
-  <div class="socials-left fade">
-    <div class="section-tag">Find Us</div>
-    <h2 class="section-title">Follow<br>the Build</h2>
-    <p class="socials-sub">We post updates, gameplay previews, and behind-the-scenes on all platforms. Come see what we're building.</p>
-  </div>
-  <div class="socials-grid fade d1">
-    <a class="social-card" href="https://twitter.com/hellofromzenn" target="_blank" rel="noopener">
-      <div class="social-icon tw">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </div>
-      <div>
-        <div class="social-handle">@hellofromzenn</div>
-        <div class="social-platform">Twitter / X</div>
-      </div>
-    </a>
-    <a class="social-card" href="https://instagram.com/hellofromzenn" target="_blank" rel="noopener">
-      <div class="social-icon ig">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-      </div>
-      <div>
-        <div class="social-handle">@hellofromzenn</div>
-        <div class="social-platform">Instagram</div>
-      </div>
-    </a>
-    <a class="social-card" href="https://youtube.com/@hellofromzenn" target="_blank" rel="noopener">
-      <div class="social-icon yt">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-      </div>
-      <div>
-        <div class="social-handle">@hellofromzenn</div>
-        <div class="social-platform">YouTube</div>
-      </div>
-    </a>
-    <a class="social-card" href="https://tiktok.com/@hellofromzenn" target="_blank" rel="noopener">
-      <div class="social-icon tt">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
-      </div>
-      <div>
-        <div class="social-handle">@hellofromzenn</div>
-        <div class="social-platform">TikTok</div>
-      </div>
-    </a>
-    <a class="social-card email-card" href="mailto:zenn.games.official@gmail.com">
-      <div class="social-icon em">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      </div>
-      <div>
-        <div class="social-handle">zenn.games.official@gmail.com</div>
-        <div class="social-platform">Email</div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <div class="logo-icon" style="width:40px;height:40px;font-size:18px;"></div>
-      <div class="footer-brand-name">Zenn Interactive Limited</div>
-      <div class="footer-brand-rc">RC9153066 · Ikorodu, Lagos</div>
-      <p class="footer-brand-desc">Building competitive gaming infrastructure for Nigeria and West Africa.</p>
-    </div>
-    <div>
-      <div class="footer-col-head">Products</div>
-      <ul class="footer-links">
-        <li><a href="#products">Zentra</a></li>
-        <li><a href="#products">Replay (Soon)</a></li>
+<section class="band">
+  <div class="split">
+    <div class="card">
+      <h3>How the money works</h3>
+      <ul class="check">
+        <li>Your stake is held from the moment you join until the match ends.</li>
+        <li>The winner gets the stakes less Zentra's 10% fee. If a match never starts, everyone gets their stake back.</li>
+        <li>Add money by bank transfer through Paystack. Withdraw to your own bank account up to 3 times a day.</li>
+        <li>Your money stays yours. You can always withdraw it, even during a break.</li>
       </ul>
+      <a class="more" href="/fees/">Stakes and fees</a>
     </div>
-    <div>
-      <div class="footer-col-head">Company</div>
-      <ul class="footer-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#about">Mission</a></li>
-        <li><a href="/terms">Terms of Service</a></li>
+    <div class="card">
+      <h3>Skill decides it</h3>
+      <ul class="check">
+        <li>Every player has a rating for each game that moves with every result.</li>
+        <li>Every game you play can be reviewed move by move, with your accuracy and notes.</li>
+        <li>Real-money games between people are reviewed for cheating.</li>
+        <li>Computer players are labelled "Computer" and are never set up to make you lose.</li>
       </ul>
-    </div>
-    <div>
-      <div class="footer-col-head">Get Access</div>
-      <ul class="footer-links">
-        <li><a href="#hero-form">Join Waitlist</a></li>
-        <li><a href="mailto:zenn.games.official@gmail.com">Email Us</a></li>
-        <li><a href="#socials">Socials</a></li>
-      </ul>
+      <a class="more" href="/fair-play/">Fair play</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Zenn Interactive Limited. All rights reserved.</span>
-    <span>🇳🇬 Made in Nigeria, built for Africa</span>
+</section>
+
+<section class="band">
+  <div class="band-head">
+    <h2>Start in four steps</h2>
+  </div>
+  <ol class="steps doc" style="max-width:none">
+    <li><b>Open zentra.com.ng</b>Sign up with your Nigerian phone number. You must be 18 or older.</li>
+    <li><b>Set your PINs</b>A 6-digit PIN signs you in. Your wallet gets its own 4-digit PIN, asked for whenever money leaves it.</li>
+    <li><b>Add money</b>Pick an amount and send it by bank transfer. Your wallet is credited automatically.</li>
+    <li><b>Play</b>Join Quick Match, accept an invite or create your own match.</li>
+  </ol>
+  <div class="hero-actions">
+    <a class="btn" href="https://zentra.com.ng">Play now</a>
+    <a class="btn btn-quiet" href="/start/">Getting started guide</a>
+  </div>
+</section>
+<aside class="note-18 home-note" aria-label="Real money">
+  <span class="pill-18">18+</span>
+  <p>Zentra is played for real money and is only for adults in Nigeria. Stake only what you can afford to lose. Limits, breaks and self-exclusion are in the app under Menu → Limits and breaks. <a href="/responsible-gambling/">Play responsibly</a></p>
+</aside></main>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="brand" href="/"><img class="logo-mark" src="/media/logo.png" alt="" width="22" height="25"><span>Zentra</span></a>
+      <p class="foot-18"><span class="pill-18">18+</span> Zentra is for adults in Nigeria. Real money is staked. <a href="/responsible-gambling/">Play responsibly</a>.</p>
+    </div>
+    <div class="foot-cols"><div class="foot-col"><p class="foot-head">Start</p><a href="/zentra/">What is Zentra</a><a href="/start/">Getting started</a><a href="/play/">Play now</a></div><div class="foot-col"><p class="foot-head">Games</p><a href="/games/">All games</a><a href="/games/chess/">Chess</a><a href="/games/chess/tips/">Chess tips</a><a href="/games/whot/">Whot</a><a href="/games/whot/tips/">Whot tips</a><a href="/games/lie/">Lie</a><a href="/games/lie/tips/">Lie tips</a><a href="/games/ludo/">Ludo</a><a href="/games/ludo/tips/">Ludo tips</a><a href="/games/pool/">Pool</a><a href="/games/pool/tips/">Pool tips</a><a href="/computer-players/">Computer players</a><a href="/games/settings/">Game settings</a></div><div class="foot-col"><p class="foot-head">Matches</p><a href="/matches/">How matches work</a><a href="/matches/quick-match/">Quick Match</a><a href="/matches/create/">Create or join a match</a><a href="/matches/long-clock/">24-hour matches</a><a href="/tournaments/">Tournaments</a><a href="/match-ups/">Match-ups</a><a href="/matches/clocks/">Clocks, resigning and rematches</a><a href="/matches/chat/">Match chat</a></div><div class="foot-col"><p class="foot-head">Money</p><a href="/fees/">Stakes and fees</a><a href="/wallet/">Your wallet</a><a href="/wallet/deposits/">Deposits</a><a href="/wallet/withdrawals/">Withdrawals</a><a href="/wallet/verification/">Verifying your identity</a><a href="/security/">Account security</a></div><div class="foot-col"><p class="foot-head">Clubs and watching</p><a href="/clubs/">Clubs</a><a href="/clubs/games/">Club chat and games</a><a href="/clubs/leagues/">Club leagues</a><a href="/watch/">Watching live</a><a href="/watch/gifts/">Gifts</a><a href="/community/">Profiles and following</a></div><div class="foot-col"><p class="foot-head">Skill and fairness</p><a href="/ratings/">Ratings</a><a href="/reviews/">Game reviews</a><a href="/achievements/">Achievements</a><a href="/fair-play/">Fair play</a></div><div class="foot-col"><p class="foot-head">Safety and help</p><a href="/responsible-gambling/">Play responsibly</a><a href="/responsible-gambling/tools/">Limits, breaks and self-exclusion</a><a href="/safety/">Blocking and reporting</a><a href="/support/">Support and disputes</a><a href="/faq/">FAQ</a></div><div class="foot-col"><p class="foot-head">Company</p><a href="/promoters/">Promoters</a><a href="/about/">About Zenn</a><a href="/updates/">Updates</a><a href="/contact/">Contact</a><a href="/terms/">Terms of Service</a><a href="/privacy/">Privacy</a><a href="/brand/">Brand</a></div></div>
+    <div class="foot-base">
+      <p>Zentra is run by Zenn Interactive Limited, RC 9153066, Lagos, Nigeria. <a href="mailto:zenn.games.official@gmail.com">zenn.games.official@gmail.com</a></p>
+      <p class="foot-social"><a href="https://twitter.com/hellofromzenn" rel="me">X</a><a href="https://instagram.com/hellofromzenn" rel="me">Instagram</a><a href="https://tiktok.com/@hellofromzenn" rel="me">TikTok</a><a href="https://youtube.com/@hellofromzenn" rel="me">YouTube</a></p>
+      <p>© 2026 Zenn Interactive Limited</p>
+    </div>
   </div>
 </footer>
-
-<script>
-  // Nav scroll
-  const nav = document.getElementById('nav');
-  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
-
-  // Fade observer
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
-
-  // Phone format
-  document.getElementById('f-phone').addEventListener('input', function() {
-    let v = this.value.replace(/\D/g,'').slice(0,11);
-    if (v.length <= 3) this.value = v;
-    else if (v.length <= 7) this.value = v.slice(0,3)+' '+v.slice(3);
-    else this.value = v.slice(0,3)+' '+v.slice(3,7)+' '+v.slice(7);
-  });
-
-  // Form submit
-  async function handleSubmit() {
-    const phone = document.getElementById('f-phone').value.trim();
-    if (phone.replace(/\D/g,'').length < 10) {
-      const el = document.getElementById('f-phone');
-      el.classList.add('error');
-      el.animate([{transform:'translateX(0)'},{transform:'translateX(-5px)'},{transform:'translateX(5px)'},{transform:'translateX(-3px)'},{transform:'translateX(3px)'},{transform:'translateX(0)'}], {duration:280,easing:'ease-out'});
-      el.addEventListener('input', () => el.classList.remove('error'), {once:true});
-      return;
-    }
-
-    const cleanedPhone = "+234" + phone.replace(/\D/g,'');
-    const cleanedUsername = document.getElementById('f-moniker').value.trim();
-    const cleanedGame = document.getElementById('f-game').value;
-    const cleanedHow = document.getElementById("f-how").value.trim();
-    const cleanedRef = new URLSearchParams(window.location.search).get('ref') || "";
-
-    const res = await fetch('https://zentra-backend-server-production.up.railway.app/wishlist', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: cleanedUsername, telephone: cleanedPhone, game: cleanedGame, how: cleanedHow, ref: cleanedRef }),
-    });
-    const data = await res.json();
-
-    if (data.code === 0) {
-      document.getElementById('form-body').style.display = 'none';
-      const sv = document.getElementById('success-view');
-      sv.classList.add('show');
-      document.getElementById('success-msg').textContent = 'You\'re in.';
-      document.getElementById('success-desc').textContent = 'Watch your phone. Your invite comes directly from us.';
-      document.getElementById('pos-num').textContent = '#' + (data.position).toLocaleString();
-    } else {
-      document.getElementById('form-body').style.display = 'none';
-      const sv = document.getElementById('success-view');
-      sv.classList.add('show');
-      document.getElementById('success-msg').textContent = 'Odd.';
-      const el = document.getElementById('success-desc');
-      el.textContent = data.msg;
-
-      const span = document.createElement('span');
-      span.textContent = ' Try again?';
-      span.style.color = 'var(--pink)';
-      span.style.cursor = 'pointer';
-      span.addEventListener('click', () => {
-        document.getElementById('form-body').style.display = '';
-        const sv = document.getElementById('success-view');
-        sv.classList.remove('show');
-      });
-
-      el.appendChild(span);
-      document.getElementById('pos-num').textContent = '';
-    }
-  }
-</script>
+<script src="/assets/site.js?v=mwgvofmy" defer></script>
 </body>
 </html>
