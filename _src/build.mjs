@@ -150,10 +150,25 @@ function article(page, body) {
 </main>`;
 }
 
+// App screenshots (made by _src/shots.mjs into media/app/). In a page body:
+//   <!-- shot: whot-turn | what the picture shows | caption -->              one phone
+//   <!-- shots: a | alt | caption ;; b | alt | caption -->                  phones side by side
+const SIZES = existsSync(join(ROOT, 'media', 'app', 'sizes.json')) ? JSON.parse(readFileSync(join(ROOT, 'media', 'app', 'sizes.json'), 'utf8')) : {};
+function figure(spec, page) {
+  const [name, alt, caption = ''] = spec.split('|').map((s) => s.trim());
+  if (!SIZES[name] || !existsSync(join(ROOT, 'media', 'app', `${name}.webp`))) throw new Error(`${page}: no screenshot media/app/${name}.webp (add it to _src/shots.mjs)`);
+  return `<figure class="shot"><img src="/media/app/${name}.webp" alt="${esc(alt)}" width="${SIZES[name][0] / 2}" height="${SIZES[name][1] / 2}" loading="lazy" decoding="async">${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+}
+function screenshots(html, page) {
+  return html
+    .replace(/<!--\s*shots:([\s\S]*?)-->/g, (m, list) => `<div class="shots">${list.split(';;').map((s) => figure(s, page)).join('')}</div><p class="shots-note">Screens from the Zentra app, with sample players and amounts.</p>`)
+    .replace(/<!--\s*shot:([\s\S]*?)-->/g, (m, spec) => `<div class="shots shots-one">${figure(spec, page)}</div><p class="shots-note">A screen from the Zentra app, with sample players and amounts.</p>`);
+}
+
 function read(path) {
   const file = join(PAGES, slugOf(path) + '.html');
   if (!existsSync(file)) throw new Error(`Missing page body: ${file}`);
-  return fill(readFileSync(file, 'utf8'));
+  return screenshots(fill(readFileSync(file, 'utf8')), path);
 }
 
 function write(path, html) {

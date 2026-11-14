@@ -1,11 +1,3 @@
-<div class="art" aria-hidden="true">
-  <svg viewBox="0 0 320 180">
-    <g transform="translate(70 34)"><rect width="78" height="116" rx="10" fill="#2A1830" stroke="#4A2B55"/><path d="M14 14h50v88H14z" fill="none" stroke="#F0366E" stroke-opacity="0.35" stroke-dasharray="4 5"/><text x="39" y="70" font-size="36" font-weight="700" font-family="Space Grotesk, sans-serif" text-anchor="middle" fill="#F0366E">?</text></g>
-    <g transform="translate(166 26)"><rect width="104" height="46" rx="14" fill="#1C1C2A" stroke="#3A3A50"/><text x="52" y="29" font-size="15" font-family="Space Grotesk, sans-serif" text-anchor="middle" fill="#F4F2FB">"Circle 7"</text><path d="M14 46l-8 14 20-14z" fill="#1C1C2A"/></g>
-    <g transform="translate(176 96)"><rect width="90" height="38" rx="19" fill="#F0366E"/><text x="45" y="25" font-size="15" font-weight="600" font-family="Space Grotesk, sans-serif" text-anchor="middle" fill="#fff">Check</text></g>
-  </svg>
-</div>
-
 <p>Lie is a bluffing card game made for Zentra, played with Whot cards. Every card goes down face down, and you say what it is. You can tell the truth or not. Your opponent can check you.</p>
 
 <div class="facts">
@@ -23,6 +15,8 @@
   <li>Say what it is. The claim must be a card that could legally follow the top claim, as in Whot.</li>
   <li>Or go to market instead and draw one card.</li>
 </ol>
+
+<!-- shots: lie-claim | Choosing a claim: tell the truth or say it is another card | Tell the truth, or claim another card ;; lie-check | The option to check the card just played | Check it, or play on -->
 
 <h2>Checking</h2>
 <p>Until the next card goes down, the other player can <strong>check</strong> the top card. It is turned face up:</p>
@@ -47,6 +41,8 @@
 </table>
 </div>
 <p>If a claim is checked and turns out to be a lie, its power is undone: a called shape is cleared, and General Market's card goes back. A true card's power stands.</p>
+
+<!-- shots: lie-caught | A lie caught after a check | Caught: the liar takes the pile ;; lie-last-card | A last card waiting to be checked or let go | A last card: check it or let it go -->
 
 <h2>Winning</h2>
 <p>Your last card isn't a win until it stands. When you put it down, your opponent either checks it or lets it go:</p>

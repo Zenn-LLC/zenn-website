@@ -25,6 +25,22 @@ node _src/serve.mjs     # look at it on http://localhost:4173
 ```
 
 Run `og.mjs` with `FORCE=1` after changing a page's title or description, so its share image matches.
+
+## App screenshots
+
+Pages show real app screens. They come from zentra-web's own browser tests, which run the real app
+against a fake server with sample players, so no real account or money appears. To refresh them:
+
+```
+cd ../zentra-web && npm run test:e2e     # writes tests/e2e/output/*.png
+cd ../zenn-website && node _src/shots.mjs   # copies the chosen ones to media/app/ as WebP
+node _src/build.mjs
+```
+
+`shots.mjs` lists which test screen becomes which site image, and notes the screens left out on
+purpose (ones whose sample amounts don't match real Zentra rules). In a page body, put
+`<!-- shot: name | alt text | caption -->`, or `<!-- shots: a | alt | caption ;; b | alt | caption -->`
+for several side by side.
 Commit the built files along with the sources.
 
 ## Keep accurate

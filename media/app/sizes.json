@@ -1,0 +1,402 @@
+{
+ "home": [
+  540,
+  731
+ ],
+ "home-cards": [
+  540,
+  525
+ ],
+ "notifications": [
+  540,
+  1110
+ ],
+ "signup-phone": [
+  540,
+  1110
+ ],
+ "signup-games": [
+  540,
+  1110
+ ],
+ "signup-done": [
+  540,
+  1110
+ ],
+ "login": [
+  540,
+  1110
+ ],
+ "otp": [
+  540,
+  1110
+ ],
+ "forgot-pin": [
+  540,
+  1110
+ ],
+ "chess-turn": [
+  540,
+  1110
+ ],
+ "chess-check": [
+  540,
+  1110
+ ],
+ "chess-premoves": [
+  540,
+  1110
+ ],
+ "chess-checkmate": [
+  540,
+  1110
+ ],
+ "chess-settings": [
+  540,
+  1110
+ ],
+ "whot-turn": [
+  540,
+  1110
+ ],
+ "whot-pick-two": [
+  540,
+  1110
+ ],
+ "whot-shape": [
+  540,
+  1110
+ ],
+ "whot-request": [
+  540,
+  1110
+ ],
+ "whot-star": [
+  540,
+  1110
+ ],
+ "whot-won": [
+  540,
+  1110
+ ],
+ "whot-settings": [
+  540,
+  1110
+ ],
+ "lie-claim": [
+  540,
+  1110
+ ],
+ "lie-check": [
+  540,
+  1110
+ ],
+ "lie-caught": [
+  540,
+  1110
+ ],
+ "lie-last-card": [
+  540,
+  1110
+ ],
+ "ludo-roll": [
+  540,
+  1110
+ ],
+ "ludo-move": [
+  540,
+  1110
+ ],
+ "ludo-capture": [
+  540,
+  1110
+ ],
+ "ludo-won": [
+  540,
+  1110
+ ],
+ "ludo-settings": [
+  540,
+  1110
+ ],
+ "pool-shot": [
+  540,
+  1110
+ ],
+ "pool-aim": [
+  540,
+  1110
+ ],
+ "pool-ball-in-hand": [
+  540,
+  1110
+ ],
+ "pool-groups": [
+  540,
+  1110
+ ],
+ "pool-settings": [
+  540,
+  1110
+ ],
+ "computer-profile": [
+  540,
+  1110
+ ],
+ "match-detail": [
+  540,
+  1110
+ ],
+ "match-join": [
+  540,
+  1110
+ ],
+ "load-match": [
+  540,
+  1110
+ ],
+ "create-type": [
+  540,
+  1110
+ ],
+ "create-stake": [
+  540,
+  1110
+ ],
+ "create-review": [
+  540,
+  1110
+ ],
+ "create-done": [
+  540,
+  1110
+ ],
+ "tournament-room": [
+  540,
+  1110
+ ],
+ "tournament-final": [
+  540,
+  1110
+ ],
+ "tournament-done": [
+  540,
+  1110
+ ],
+ "matchup-length": [
+  540,
+  1110
+ ],
+ "matchup-room": [
+  540,
+  1110
+ ],
+ "matchup-game-won": [
+  540,
+  1110
+ ],
+ "matchup-series-won": [
+  540,
+  1110
+ ],
+ "resign": [
+  540,
+  1110
+ ],
+ "game-lost": [
+  540,
+  1110
+ ],
+ "rematch": [
+  540,
+  1110
+ ],
+ "chat-banner": [
+  540,
+  1110
+ ],
+ "chat-window": [
+  540,
+  1110
+ ],
+ "wallet": [
+  540,
+  1110
+ ],
+ "wallet-new-pin": [
+  540,
+  1110
+ ],
+ "wallet-list": [
+  540,
+  1110
+ ],
+ "wallet-transaction": [
+  540,
+  1110
+ ],
+ "wallet-details": [
+  540,
+  1110
+ ],
+ "deposit-amount": [
+  540,
+  1110
+ ],
+ "deposit-account": [
+  540,
+  1110
+ ],
+ "dedicated-account": [
+  540,
+  1110
+ ],
+ "withdraw-amount": [
+  540,
+  1110
+ ],
+ "withdraw-bank": [
+  540,
+  1110
+ ],
+ "withdraw-pin": [
+  540,
+  1110
+ ],
+ "withdraw-sent": [
+  540,
+  1110
+ ],
+ "kyc-bvn": [
+  540,
+  1110
+ ],
+ "kyc-bank": [
+  540,
+  1110
+ ],
+ "kyc-submitted": [
+  540,
+  1110
+ ],
+ "club": [
+  540,
+  1110
+ ],
+ "club-trophies": [
+  540,
+  1110
+ ],
+ "club-game-start": [
+  540,
+  1110
+ ],
+ "club-matchup": [
+  540,
+  1110
+ ],
+ "fixture-lineup": [
+  540,
+  1110
+ ],
+ "fixture-boards": [
+  540,
+  1110
+ ],
+ "league-tables": [
+  540,
+  1110
+ ],
+ "watching": [
+  540,
+  1110
+ ],
+ "watching-gift": [
+  540,
+  1110
+ ],
+ "friends-playing": [
+  540,
+  240
+ ],
+ "profile": [
+  540,
+  1110
+ ],
+ "profile-starred": [
+  540,
+  1110
+ ],
+ "followers": [
+  540,
+  1110
+ ],
+ "rating-board": [
+  540,
+  1110
+ ],
+ "menu": [
+  540,
+  1110
+ ],
+ "review-summary": [
+  540,
+  1110
+ ],
+ "review-chess": [
+  540,
+  1110
+ ],
+ "review-whot": [
+  540,
+  1110
+ ],
+ "review-lie": [
+  540,
+  1110
+ ],
+ "review-ludo": [
+  540,
+  1110
+ ],
+ "review-pool": [
+  540,
+  1110
+ ],
+ "achievement": [
+  540,
+  1110
+ ],
+ "achievements": [
+  540,
+  1110
+ ],
+ "achievement-unlocked": [
+  540,
+  1110
+ ],
+ "limits": [
+  540,
+  1110
+ ],
+ "break": [
+  540,
+  1110
+ ],
+ "reality-check": [
+  540,
+  1110
+ ],
+ "blocked": [
+  540,
+  1110
+ ],
+ "support-new": [
+  540,
+  1110
+ ],
+ "support-thread": [
+  540,
+  1110
+ ]
+}

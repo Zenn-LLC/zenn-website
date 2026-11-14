@@ -217,3 +217,18 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 /* 404 */
 .lost { display: flex; flex-direction: column; gap: 18px; padding-block: 40px; }
 .lost h1 { font-size: clamp(32px, 6vw, 48px); }
+
+/* app screenshots: phone-shaped, side by side where there's room */
+.shots { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; padding: 22px; margin-top: 4px; border-radius: var(--r); background: linear-gradient(180deg, var(--card-top), var(--card)); border: 1px solid var(--line); }
+.shot { margin: 0; flex: 0 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.shots-one .shot { flex-basis: 250px; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line-strong); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45); background: #09090F; }
+.shot figcaption { font-size: 13px; color: var(--soft); text-align: center; max-width: 210px; line-height: 1.45; }
+.shots-note { font-size: 12px !important; color: var(--muted) !important; margin-top: -10px; text-align: center; max-width: none !important; }
+@media (max-width: 520px) {
+  .shots { padding: 16px 12px; gap: 14px; }
+  .shot { flex-basis: calc(50% - 7px); }
+  .shots-one .shot { flex-basis: 74%; }
+}
+.hero-shot { margin: 0; display: flex; justify-content: center; }
+.hero-shot img { width: min(300px, 78vw); height: auto; aspect-ratio: 360 / 740; border-radius: 26px; border: 1px solid var(--line-strong); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55); }
