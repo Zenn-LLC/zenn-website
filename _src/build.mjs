@@ -15,7 +15,11 @@ const VERSION = Date.now().toString(36);   // cache-buster for the stylesheet an
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const outFile = (path) => path === '/404.html' ? join(ROOT, '404.html') : join(ROOT, slugOf(path) === 'index' ? '' : slugOf(path), 'index.html');
 
-const fill = (html) => html.replaceAll('{{APP}}', APP).replaceAll('{{EMAIL}}', EMAIL).replaceAll('{{SITE}}', SITE);
+// A link to the app from a page, tagged so the app can count the sign-ups this site brings:
+// utm_source=zenn, utm_medium=website, utm_campaign=<the page's slug> ('home' for the home page,
+// 'games-chess' for /games/chess/). The app saves it on the visitor's first visit.
+const appLink = (path) => `${APP}/?utm_source=zenn&amp;utm_medium=website&amp;utm_campaign=${path === '/' ? 'home' : ogName(path)}`;
+const fill = (html, path) => html.replaceAll('{{APP}}', appLink(path)).replaceAll('{{EMAIL}}', EMAIL).replaceAll('{{SITE}}', SITE);
 const idFor = (text) => text.toLowerCase().replace(/<[^>]+>/g, '').replace(/&[a-z]+;/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const LOGO = '<img class="logo-mark" src="/media/logo.png" alt="" width="22" height="25">';
@@ -64,7 +68,7 @@ function header(path) {
   <div class="top-in">
     <a class="brand" href="/">${LOGO}<span>Zentra</span></a>
     <nav class="top-nav" aria-label="Main">${links}</nav>
-    <a class="btn btn-sm top-play" href="${APP}">Play now</a>
+    <a class="btn btn-sm top-play" href="${appLink(path)}">Play now</a>
     <details class="menu">
       <summary aria-label="Menu"><span></span><span></span><span></span></summary>
       <div class="menu-panel">
@@ -168,7 +172,7 @@ function screenshots(html, page) {
 function read(path) {
   const file = join(PAGES, slugOf(path) + '.html');
   if (!existsSync(file)) throw new Error(`Missing page body: ${file}`);
-  return screenshots(fill(readFileSync(file, 'utf8')), path);
+  return screenshots(fill(readFileSync(file, 'utf8'), path), path);
 }
 
 function write(path, html) {

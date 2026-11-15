@@ -11,6 +11,10 @@ of minutes. GitHub Pages doesn't publish folders that start with `_`, so this fo
   the home page is `pages/index.html`). The layout adds the header, menu, breadcrumbs, page title,
   "On this page", the 18+ note on money pages, next/previous links and the footer.
 - `{{APP}}` (zentra.com.ng), `{{EMAIL}}` and `{{SITE}}` are filled in when the site is built.
+  Every link to the app (`{{APP}}` and the header's Play now) is tagged
+  `?utm_source=zenn&utm_medium=website&utm_campaign=<page slug>` (`home`, `games-chess`, …), so
+  the admin console can count the sign-ups each page brings. Link to the app with `{{APP}}`, never
+  a typed-out address, so it stays tagged.
 - The look is in `../assets/site.css`. All colours are tokens at the top.
 
 ## Building
