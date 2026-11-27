@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mwys892z">
+<link rel="stylesheet" href="/assets/site.css?v=mwzhtfnw">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -57,7 +57,7 @@
         <p class="lede">Tournaments of 4 to 256 players on Zentra Arena: brackets, stakes, the pot and the winner's prize.</p>
       </header>
       <details class="toc" open><summary>On this page</summary><ol><li><a href="#two-ways-in">Two ways in</a></li><li><a href="#how-the-bracket-works">How the bracket works</a></li><li><a href="#the-pot">The pot</a></li><li><a href="#if-it-doesn-t-fill">If it doesn't fill</a></li><li><a href="#club-tournaments">Club tournaments</a></li><li><a href="#achievements">Achievements</a></li></ol></details>
-      <p>A tournament is a knockout bracket. Everyone stakes the same amount, every game is one on one, and the player who wins the final takes the pot.</p>
+      <p>A tournament is a knockout bracket. Everyone stakes the same amount, every game is one on one, and the pot goes to the players who finish highest. In a tournament of 4, the winner takes it all.</p>
 
 <h2 id="two-ways-in">Two ways in</h2>
 <div class="grid-2">
@@ -88,15 +88,26 @@
 <div class="shots"><figure class="shot"><img src="/media/app/tournament-room.webp" alt="A tournament room with semi-finals" width="270" height="555" loading="lazy" decoding="async"><figcaption>The bracket</figcaption></figure><figure class="shot"><img src="/media/app/tournament-final.webp" alt="Tournament results with winners going through" width="270" height="555" loading="lazy" decoding="async"><figcaption>Winners go through</figcaption></figure></div><p class="shots-note">Screens from the Zentra Arena app, with sample players and amounts.</p>
 
 <h2 id="the-pot">The pot</h2>
-<p>The pot is every player's stake added together, less Zentra Arena's 10% fee. It all goes to the winner of the final.</p>
+<p>The prize pool is every player's stake added together, less Zentra Arena's 10% fee. It's shared out by where you finish:</p>
 <div class="table-wrap"><table>
-  <thead><tr><th>Example</th><th class="num">Total staked</th><th class="num">Winner gets</th></tr></thead>
+  <thead><tr><th>Players</th><th class="num">1st</th><th class="num">2nd</th><th class="num">3rd and 4th</th></tr></thead>
   <tbody>
-    <tr><td>8 players at ₦1,000</td><td class="num">₦8,000</td><td class="num">₦7,200</td></tr>
-    <tr><td>16 players at ₦500</td><td class="num">₦8,000</td><td class="num">₦7,200</td></tr>
-    <tr><td>32 players at ₦2,000</td><td class="num">₦64,000</td><td class="num">₦57,600</td></tr>
+    <tr><td>4</td><td class="num">All of it</td><td class="num">Nothing</td><td class="num">Nothing</td></tr>
+    <tr><td>8</td><td class="num">Two thirds</td><td class="num">One third</td><td class="num">Nothing</td></tr>
+    <tr><td>16 to 256</td><td class="num">Half</td><td class="num">A quarter</td><td class="num">An eighth each</td></tr>
   </tbody>
 </table></div>
+<p>Everyone below that wins nothing. Every paid place gets back more than its stake.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Example</th><th class="num">Total staked</th><th class="num">Prize pool</th><th class="num">Who gets what</th></tr></thead>
+  <tbody>
+    <tr><td>4 players at ₦200</td><td class="num">₦800</td><td class="num">₦720</td><td class="num">1st ₦720</td></tr>
+    <tr><td>8 players at ₦1,000</td><td class="num">₦8,000</td><td class="num">₦7,200</td><td class="num">1st ₦4,800, 2nd ₦2,400</td></tr>
+    <tr><td>16 players at ₦500</td><td class="num">₦8,000</td><td class="num">₦7,200</td><td class="num">1st ₦3,600, 2nd ₦1,800, 3rd and 4th ₦900 each</td></tr>
+    <tr><td>32 players at ₦2,000</td><td class="num">₦64,000</td><td class="num">₦57,600</td><td class="num">1st ₦28,800, 2nd ₦14,400, 3rd and 4th ₦7,200 each</td></tr>
+  </tbody>
+</table></div>
+<p>A tournament always pays the split it showed when it was created.</p>
 <p>The pot for your bracket size is shown live while you set the tournament up, so you see it before you create it.</p>
 
 <h2 id="if-it-doesn-t-fill">If it doesn't fill</h2>
@@ -133,6 +144,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=mwys892z" defer></script>
+<script src="/assets/site.js?v=mwzhtfnw" defer></script>
 </body>
 </html>
