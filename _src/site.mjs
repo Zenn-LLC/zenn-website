@@ -3,7 +3,7 @@
 // below. GitHub Pages ignores folders that start with "_", so none of this is published.
 
 export const SITE = 'https://zenn.com.ng';
-export const APP = 'https://zentra.com.ng';
+export const APP = 'https://zentraarena.com';
 export const EMAIL = 'zenn.games.official@gmail.com';
 
 // Sections, in menu order. Each page: [path, menu label, <title>, meta description, options]
@@ -13,7 +13,7 @@ export const SECTIONS = [
     ['/', 'Home', 'Zentra Arena: skill games for real stakes', 'Play Chess, Whot, Lie, Ludo and Pool against real people for real money, in your browser. 18+, Nigeria only.', { money: true }],
     ['/zentra/', 'What is Zentra Arena', 'What is Zentra Arena?', 'Zentra Arena is a Nigerian platform for playing skill games against real people, with a stake on each match. What it is, who runs it and how it makes money.', { money: true }],
     ['/start/', 'Getting started', 'Getting started on Zentra Arena', 'Create an account, set your PIN, add money and play your first match, step by step.', { money: true }],
-    ['/play/', 'Play now', 'Play Zentra Arena in your browser', 'Zentra Arena runs in your phone or computer browser at zentra.com.ng. What you need before you sign up.', { money: true }],
+    ['/play/', 'Play now', 'Play Zentra Arena in your browser', 'Zentra Arena runs in your phone or computer browser at zentraarena.com. What you need before you sign up.', { money: true }],
   ] },
   { id: 'games', name: 'Games', pages: [
     ['/games/', 'All games', 'The five Zentra Arena games', 'Chess, Whot, Lie, Ludo and Pool on Zentra Arena: how long each takes, what decides a win and where to learn the rules.'],

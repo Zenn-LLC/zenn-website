@@ -10,7 +10,7 @@ of minutes. GitHub Pages doesn't publish folders that start with `_`, so this fo
 - Each page's body is in `pages/<address>.html` (`/games/chess/` → `pages/games/chess.html`,
   the home page is `pages/index.html`). The layout adds the header, menu, breadcrumbs, page title,
   "On this page", the 18+ note on money pages, next/previous links and the footer.
-- `{{APP}}` (zentra.com.ng), `{{EMAIL}}` and `{{SITE}}` are filled in when the site is built.
+- `{{APP}}` (zentraarena.com), `{{EMAIL}}` and `{{SITE}}` are filled in when the site is built.
   Every link to the app (`{{APP}}` and the header's Play now) is tagged
   `?utm_source=zenn&utm_medium=website&utm_campaign=<page slug>` (`home`, `games-chess`, …), so
   the admin console can count the sign-ups each page brings. Link to the app with `{{APP}}`, never
