@@ -27,7 +27,7 @@ const LOGO = '<img class="logo-mark" src="/media/logo.png" alt="" width="22" hei
 function head({ path, title, description, noindex = false }) {
   const url = SITE + (path === '/404.html' ? '/' : path);
   const og = `${SITE}/media/og/${ogName(path)}.png`;
-  const fullTitle = path === '/' ? title : `${title} | Zentra`;
+  const fullTitle = path === '/' ? title : `${title} | Zentra Arena`;
   return `<!doctype html>
 <html lang="en-NG">
 <head>
@@ -39,7 +39,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" hr
 <meta name="theme-color" content="#09090F">
 <link rel="icon" href="/media/logo.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Zentra">
+<meta property="og:site_name" content="Zentra Arena">
 <meta property="og:locale" content="en_NG">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(title)}">
@@ -66,7 +66,7 @@ function header(path) {
   return `<a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="/">${LOGO}<span>Zentra</span></a>
+    <a class="brand" href="/">${LOGO}<span>Zentra Arena</span></a>
     <nav class="top-nav" aria-label="Main">${links}</nav>
     <a class="btn btn-sm top-play" href="${appLink(path)}">Play now</a>
     <details class="menu">
@@ -84,12 +84,12 @@ function footer() {
   return `<footer class="foot">
   <div class="foot-in">
     <div class="foot-top">
-      <a class="brand" href="/">${LOGO}<span>Zentra</span></a>
-      <p class="foot-18"><span class="pill-18">18+</span> Zentra is for adults in Nigeria. Real money is staked. <a href="/responsible-gambling/">Play responsibly</a>.</p>
+      <a class="brand" href="/">${LOGO}<span>Zentra Arena</span></a>
+      <p class="foot-18"><span class="pill-18">18+</span> Zentra Arena is for adults in Nigeria. Real money is staked. <a href="/responsible-gambling/">Play responsibly</a>.</p>
     </div>
     <div class="foot-cols">${cols}</div>
     <div class="foot-base">
-      <p>Zentra is run by Zenn Interactive Limited, RC 9153066, Lagos, Nigeria. <a href="mailto:${EMAIL}">${EMAIL}</a></p>
+      <p>Zentra Arena is run by Zenn Interactive Limited, RC 9153066, Lagos, Nigeria. <a href="mailto:${EMAIL}">${EMAIL}</a></p>
       <p class="foot-social"><a href="https://twitter.com/hellofromzenn" rel="me">X</a><a href="https://instagram.com/hellofromzenn" rel="me">Instagram</a><a href="https://tiktok.com/@hellofromzenn" rel="me">TikTok</a><a href="https://youtube.com/@hellofromzenn" rel="me">YouTube</a></p>
       <p>© 2026 Zenn Interactive Limited</p>
     </div>
@@ -103,7 +103,7 @@ function footer() {
 
 const MONEY_NOTE = `<aside class="note-18" aria-label="Real money">
   <span class="pill-18">18+</span>
-  <p>Zentra is played for real money and is only for adults in Nigeria. Stake only what you can afford to lose. Limits, breaks and self-exclusion are in the app under Menu → Limits and breaks. <a href="/responsible-gambling/">Play responsibly</a></p>
+  <p>Zentra Arena is played for real money and is only for adults in Nigeria. Stake only what you can afford to lose. Limits, breaks and self-exclusion are in the app under Menu → Limits and breaks. <a href="/responsible-gambling/">Play responsibly</a></p>
 </aside>`;
 
 // adds ids to <h2>s that have none, and returns the list for "On this page"
@@ -165,8 +165,8 @@ function figure(spec, page) {
 }
 function screenshots(html, page) {
   return html
-    .replace(/<!--\s*shots:([\s\S]*?)-->/g, (m, list) => `<div class="shots">${list.split(';;').map((s) => figure(s, page)).join('')}</div><p class="shots-note">Screens from the Zentra app, with sample players and amounts.</p>`)
-    .replace(/<!--\s*shot:([\s\S]*?)-->/g, (m, spec) => `<div class="shots shots-one">${figure(spec, page)}</div><p class="shots-note">A screen from the Zentra app, with sample players and amounts.</p>`);
+    .replace(/<!--\s*shots:([\s\S]*?)-->/g, (m, list) => `<div class="shots">${list.split(';;').map((s) => figure(s, page)).join('')}</div><p class="shots-note">Screens from the Zentra Arena app, with sample players and amounts.</p>`)
+    .replace(/<!--\s*shot:([\s\S]*?)-->/g, (m, spec) => `<div class="shots shots-one">${figure(spec, page)}</div><p class="shots-note">A screen from the Zentra Arena app, with sample players and amounts.</p>`);
 }
 
 function read(path) {

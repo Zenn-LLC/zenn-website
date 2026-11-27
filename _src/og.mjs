@@ -36,15 +36,15 @@ function card({ title, description, section, path }) {
   .foot { margin-top: 44px; display: flex; justify-content: space-between; align-items: center; font-size: 22px; color: #8886A4; }
   .pill { border: 1.5px solid rgba(255,255,255,0.18); border-radius: 99px; padding: 4px 14px; font: 700 18px "Space Grotesk", sans-serif; color: #F4F2FB; }
 </style></head><body>
-  <div class="top"><img src="${logo}" alt="">Zentra</div>
-  <div class="eyebrow">${esc(home ? 'Zentra by Zenn' : section)}</div>
+  <div class="top"><img src="${logo}" alt="">Zentra Arena</div>
+  <div class="eyebrow">${esc(home ? 'Zentra Arena by Zenn' : section)}</div>
   <h1>${esc(title)}</h1>
   <p>${esc(description)}</p>
   <div class="foot"><span>zenn.com.ng</span><span class="pill">18+ · Nigeria</span></div>
 </body></html>`;
 }
 
-const pages = [...allPages().map((p) => ({ ...p, section: p.section.name })), { path: NOT_FOUND[0], title: NOT_FOUND[2], description: NOT_FOUND[3], section: 'Zentra' }];
+const pages = [...allPages().map((p) => ({ ...p, section: p.section.name })), { path: NOT_FOUND[0], title: NOT_FOUND[2], description: NOT_FOUND[3], section: 'Zentra Arena' }];
 
 // One Edge for every card, driven over its DevTools connection: starting Edge once per image is
 // slow. It gets its own profile, so it never joins an Edge that's already open.
